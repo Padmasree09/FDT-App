@@ -1,0 +1,70 @@
+.menu-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  .food-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 20px; 
+    justify-items: center;
+  }
+  
+  .food-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .food-item-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .food-details {
+    text-align: center;
+  }
+  
+  .food-name {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .food-price {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .doraemon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    cursor: pointer;
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .doraemon.clicked {
+    transform: translate(0, -50px) scale(0.8);
+    opacity: 0;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  
+  .doraemon-clone {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    pointer-events: all;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  
+
+  
+  

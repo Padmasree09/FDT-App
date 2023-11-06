@@ -1,0 +1,17 @@
+<div class="Cart Page">
+  <h2>Cart Items</h2>
+  <ul>
+    <li *ngFor="let item of cartItems">
+      <div class="cart-item">
+        <img [src]="item.image" alt="{{ item.name }}" />
+        <span> {{ item.name }}</span>
+        <span> {{ item.price * item.quantity }} </span>
+        <div class="quantity-controls">
+          <button (click)="decreaseQuantity(item)">-</button>
+          <span>{{ item.quantity }} </span>
+          <button (click)="increaseQuantity(item)">+</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

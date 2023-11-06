@@ -1,0 +1,26 @@
+.cart-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .cart-icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+  }
+  .cart-count {
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+  .cart-image{
+    width: 100px;
+    height: -50px;
+  }

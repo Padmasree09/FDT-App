@@ -1,0 +1,35 @@
+<div class="menu-container">
+  <h2>Menu</h2>
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    (keyup.enter)="onSearch()"
+    placeholder="Search for items"
+  />
+  <div class="food-items">
+    <div class="food-item" *ngFor="let item of filteredItems">
+      <img
+        src="{{ item.image }}"
+        alt="{{ item.name }}"
+        class="food-item-image"
+        width="100"
+        height="100"
+      />
+      <div class="food-details">
+        <span class="food-name">{{ item.name }}</span>
+        <span class="food-price">{{ item.price }}</span>
+
+        <div class="doraemon-container">
+          <img
+            src="assets/image/doraemon.jpg"
+            #doraemon
+            (click)="addToCartWithAnimation(item, doraemon, $event)"
+            class="doraemon"
+            width="100px"
+            height="100px"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
