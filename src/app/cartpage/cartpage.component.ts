@@ -39,10 +39,7 @@ export class CartpageComponent implements OnInit {
     );
   }
   updateCheckoutItems() {
-    // Clear the checkout items list
     this.checkoutItems = [];
-
-    // Filter items with a quantity greater than 0 for checkout
     this.checkoutItems = this.cartItems.filter((item) => item.quantity > 0);
   }
   placeOrder() {

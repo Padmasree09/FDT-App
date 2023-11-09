@@ -40,7 +40,11 @@
     </div>
     <div>Total Price: {{ totalPrice }}</div>
     <div>
-      <button class="place-order" (click)="placeOrder()">Place Order</button>
+      <a routerLink="/purchase"
+        ><button class="place-order" (click)="placeOrder()">
+          Place Order
+        </button></a
+      >
     </div>
   </div>
 </div>

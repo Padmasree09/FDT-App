@@ -78,6 +78,7 @@ export class DeliveryComponent implements OnInit, AfterViewInit {
 
           // Update userLocation
           this.userLocation = { lat, lng };
+          this.map.setView([lat, lng], 13);
 
           // Calculate the estimated time of arrival (ETA)
           this.calculateETA();

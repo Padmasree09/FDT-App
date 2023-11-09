@@ -18,6 +18,24 @@ import { ActivatedRoute } from '@angular/router';
 export class MenuComponent implements OnInit {
   @Output() viewCart = new EventEmitter<void>();
   showCart = false;
+  items = [
+    {
+      id: 1,
+      name: 'Item1',
+      restaurantName: 'Restaurant A',
+      Rating: 4,
+      review: 'good and worthy',
+    },
+    {
+      id: 2,
+      name: 'Item 2',
+      restaurantName: 'Restaurant B',
+      Rating: 4,
+      review: 'good and worthy',
+    },
+  ];
+  isItemOpen = false;
+  selectedItem: any;
   foodItems: FoodItem[] = [
     {
       name: 'Pizza',
@@ -179,10 +197,20 @@ export class MenuComponent implements OnInit {
       this.viewCart.emit();
     }
   }
+  viewDetails(item: any) {
+    this.router.navigate(['/itemdescription', item.id]);
+  }
 }
 export interface FoodItem {
   name: string;
   price: number;
   image: string;
   quantity: number;
+}
+export interface items {
+  id: number;
+  name: string;
+  restaurantName: string;
+  Rating: number;
+  review: string;
 }

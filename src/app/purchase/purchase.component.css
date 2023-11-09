@@ -1,0 +1,16 @@
+/* payment.component.css */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .payment-option {
+    max-width: 400px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  

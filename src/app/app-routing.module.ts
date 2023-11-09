@@ -5,13 +5,15 @@ import { CartComponent } from './cart/cart.component';
 import { CartpageComponent } from './cartpage/cartpage.component';
 import { PurchaseComponent } from './purchase/purchase.component';
 import { DeliveryComponent } from './delivery/delivery.component';
+import { ItemdescriptionComponent } from './itemdescription/itemdescription.component';
 const routes: Routes = [
   { path: 'menu', component: MenuComponent },
   { path: 'cart', component: CartComponent },
   { path: 'cartpage', component: CartpageComponent },
   { path: 'purchase', component: PurchaseComponent },
   { path: '', redirectTo: '/menu', pathMatch: 'full' },
-  {path:'delivery', component: DeliveryComponent}
+  { path: 'delivery', component: DeliveryComponent },
+  { path: 'itemdescription/:id', component: ItemdescriptionComponent },
 ];
 
 @NgModule({
