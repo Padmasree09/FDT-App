@@ -1,17 +1,46 @@
-<div class="Cart Page">
-  <h2>Cart Items</h2>
-  <ul>
-    <li *ngFor="let item of cartItems">
-      <div class="cart-item">
-        <img [src]="item.image" alt="{{ item.name }}" />
-        <span> {{ item.name }}</span>
-        <span> {{ item.price * item.quantity }} </span>
-        <div class="quantity-controls">
-          <button (click)="decreaseQuantity(item)">-</button>
-          <span>{{ item.quantity }} </span>
-          <button (click)="increaseQuantity(item)">+</button>
+<div class="Cart-Page">
+  <div class="heading">
+    <h2>Cart Items</h2>
+  </div>
+
+  <div>
+    <ul>
+      <li *ngFor="let item of cartItems">
+        <div class="big-container">
+          <div class="small-container">
+            <img [src]="item.image" alt="{{ item.name }}" />
+          </div>
+
+          <div class="text-container">
+            <div>
+              <span> {{ item.name }}</span
+              ><br />
+              <span> {{ item.price * item.quantity }} </span><br />
+              <div class="quantity-section">
+                <button (click)="decreaseQuantity(item)">-</button>
+                <span class="item-quantity">{{ item.quantity }} </span>
+                <button (click)="increaseQuantity(item)">+</button><br />
+              </div>
+              <div>
+                <button class="place-order" (click)="placeOrder()">
+                  Place Order
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </li>
-  </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="total-price">Total Price: {{ totalPrice }}</div>
+  <br />
+  <div class="checkout">
+    <div *ngFor="let item of checkoutItems">
+      {{ item.name }} - {{ item.price * item.quantity }}
+    </div>
+    <div>Total Price: {{ totalPrice }}</div>
+    <div>
+      <button class="place-order" (click)="placeOrder()">Place Order</button>
+    </div>
+  </div>
 </div>

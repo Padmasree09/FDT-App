@@ -13,5 +13,6 @@ export class AppComponent {
   viewCart() {
     this.showCart = true;
     this.router.navigate(['/cartpage']);
+    
   }
 }

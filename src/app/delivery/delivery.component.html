@@ -1,0 +1,21 @@
+<div class="userlocation">
+  <h6>User location:</h6>
+  <label for="location">
+    <input type="text" id="location" placeholder="Enter the address" />
+  </label>
+</div>
+
+<div id="map" style="height: 500px"></div>
+<div class="locations">
+  <h6>User Location:</h6>
+  <p>Latitude: {{ userLocation.lat }}</p>
+  <p>Longitude: {{ userLocation.lng }}</p>
+  <h6>Delivery Person Location:</h6>
+  <p>Latitude: {{ deliveryPersonLocation.lat }}</p>
+  <p>Longitude: {{ deliveryPersonLocation.lng }}</p>
+</div>
+
+<div class="eta">
+  <h6>Estimated Time of Arrival (ETA):</h6>
+  <p>{{ etaMinutes }} minutes</p>
+</div>
