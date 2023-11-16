@@ -16,21 +16,25 @@ declare var L: any;
 })
 export class DeliveryComponent implements OnInit, AfterViewInit {
   private map: any;
-  private marker: any;
+  private userMarker: any;
+  private deliveryMarker: any;
+  private polyline: any;
   public userLocation: { lat: number; lng: number } = { lat: 0, lng: 0 }; // User's location
   public deliveryPersonLocation: { lat: number; lng: number } = {
     lat: 0,
     lng: 0,
   }; // Delivery person's location
   public etaMinutes: number = 0; // Estimated time of arrival
+
   constructor(private router: Router, private http: HttpClient) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getUserLocation();
+    this.setDeliveryPersonLocation();
+  }
 
   ngAfterViewInit(): void {
     this.initializeMap();
-    this.getUserLocation(); // Get the user's location
-    this.setDeliveryPersonLocation(); // Set the delivery person's initial location
   }
 
   private initializeMap() {
@@ -51,39 +55,43 @@ export class DeliveryComponent implements OnInit, AfterViewInit {
       'location'
     ) as HTMLInputElement;
     const address = addressInput.value;
-
     const geocodingService =
       'https://api.opencagedata.com/geocode/v1/json?q=' +
       encodeURIComponent(address) +
       '&key=41413ba1fa87497ab87980b8e4e515f6';
-
     this.http.get(geocodingService).subscribe(
       (data: any) => {
         const firstResult = data.results[0];
-        const customIcon = L.icon({
-          iconUrl: 'assets/image/delivery-icon.png', // Path to your custom marker image
-          iconSize: [32, 32], // Adjust the size as needed
-          iconAnchor: [16, 32], // Adjust the anchor point
-        });
         if (firstResult) {
           const { lat, lng } = firstResult.geometry;
 
-          if (this.marker) {
-            this.map.removeLayer(this.marker);
+          if (this.userMarker) {
+            this.map.removeLayer(this.userMarker);
           }
 
-          this.marker = L.marker([lat, lng], { icon: customIcon }).addTo(
+          const customIcon = L.icon({
+            iconUrl: 'assets/image/delivery-icon.png',
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+          });
+
+          this.userMarker = L.marker([lat, lng], { icon: customIcon }).addTo(
             this.map
           );
-
-          // Update userLocation
-          this.userLocation = { lat, lng };
+          // to center the map at the user - entered location
           this.map.setView([lat, lng], 13);
+          const customDeliveryIcon = L.icon({
+            iconUrl: 'assets/image/delivery-icon.png',
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+          });
+          this.deliveryMarker = L.marker(
+            [this.deliveryPersonLocation.lat, this.deliveryPersonLocation.lng],
+            { icon: customDeliveryIcon }
+          ).addTo(this.map);
 
-          // Calculate the estimated time of arrival (ETA)
+          this.userLocation = { lat, lng };
           this.calculateETA();
-
-          // You can also send a notification to the user here.
         } else {
           console.error('No results found for the address.');
         }
@@ -92,10 +100,22 @@ export class DeliveryComponent implements OnInit, AfterViewInit {
         console.error('Error geocoding the address:', error);
       }
     );
+    if (this.userLocation.lat !== 0 && this.userLocation.lng !== 0) {
+      if (this.polyline) {
+        this.map.removeLayer(this.polyline);
+      }
+      const latlng = [
+        [this.userLocation.lat, this.userLocation.lng],
+        [this.deliveryPersonLocation.lat, this.deliveryPersonLocation.lng],
+      ];
+      this.polyline = L.polyline(latlng, {
+        color: 'black',
+        dashArray: '10,10',
+      }).addTo(this.map);
+    }
   }
 
   getUserLocation() {
-    // Use the browser's geolocation API to get the user's current location
     navigator.geolocation.getCurrentPosition((position) => {
       this.userLocation.lat = position.coords.latitude;
       this.userLocation.lng = position.coords.longitude;
@@ -103,14 +123,22 @@ export class DeliveryComponent implements OnInit, AfterViewInit {
   }
 
   setDeliveryPersonLocation() {
-    // Set the initial location of the delivery person
-    this.deliveryPersonLocation.lat = 17.6801; // Change to the actual delivery person's latitude
-    this.deliveryPersonLocation.lng = 83.2016; // Change to the actual delivery person's longitude
-  }
+    this.deliveryPersonLocation.lat = 17.43993; //  delivery person's latitude
+    this.deliveryPersonLocation.lng = 78.498276; // delivery person's longitude
+    const customDeliveryIcon = L.icon({
+      iconUrl: 'assets/image/delivery-icon.png',
+      iconSize: [32, 32],
 
+      iconAnchor: [16, 32],
+    });
+    this.deliveryMarker = L.marker(
+      [this.deliveryPersonLocation.lat, this.deliveryPersonLocation.lng],
+      { icon: customDeliveryIcon }
+    ).addTo(this.map);
+  }
   calculateETA() {
-    // Calculate the distance between user and delivery person (Haversine formula)
-    const radius = 6371; // Earth's radius in km
+    //(Haversine formula)
+    const radius = 6371;
     const dLat = this.deg2rad(
       this.userLocation.lat - this.deliveryPersonLocation.lat
     );
@@ -125,10 +153,8 @@ export class DeliveryComponent implements OnInit, AfterViewInit {
         Math.sin(dLng / 2) *
         Math.sin(dLng / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    const distance = radius * c; // Distance in km
-
-    // Estimate ETA based on a predefined speed (e.g., 30 km/h)
-    const speed = 100; // km per hour
+    const distance = radius * c;
+    const speed = 100;
     this.etaMinutes = (distance / speed) * 60;
   }
 

@@ -30,7 +30,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/leaflet/dist/leaflet.js"
+              "node_modules/leaflet/dist/leaflet.js",
+              "node_modules/leaflet-routing-machine/dist/leaflet-routing-machine.js"
             ]
           },
           "configurations": {

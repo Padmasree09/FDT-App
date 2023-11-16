@@ -11,6 +11,7 @@ import { CartpageComponent } from './cartpage/cartpage.component';
 import { PurchaseComponent } from './purchase/purchase.component';
 import { DeliveryComponent } from './delivery/delivery.component';
 import { ItemdescriptionComponent } from './itemdescription/itemdescription.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ItemdescriptionComponent } from './itemdescription/itemdescription.comp
     PurchaseComponent,
     DeliveryComponent,
     ItemdescriptionComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

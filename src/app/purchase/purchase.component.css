@@ -1,16 +1,251 @@
-/* payment.component.css */
+/* Styles for the main container */
+
+
+
+.main {
+  margin-top: 80px;
+  background-color: #cecaca;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin-left: 550px;
+}
+
+img{
+  width: 80px;
+  height: 80px;
+}
+
+/* Styles for payment options */
 .payment-options {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .payment-option {
-    max-width: 400px;
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  
+  text-align: center;
+}
+
+.payment-option {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.payment-option h4 {
+  color: #333;
+  margin: 0;
+}
+
+.submit-button{
+  margin-top: 10px;
+  background-color: beige;
+}
+
+/* Styles for card selection dropdown */
+.card-selection {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin: 10px 0px;
+}
+
+.card-selection img {
+  width: 70px;
+  height: auto;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card-selection img:hover {
+  transform: scale(1.1);
+}
+
+/* Styles for conditional card details section */
+/* .according {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.arrow {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Styles for form fields */
+.form-group {
+  margin: 10px 0;
+}
+
+label {
+  font-weight: 600;
+}
+
+input {
+  display: block;
+  width: 180px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 80px;
+}
+
+/* Styles for the "Go to Delivery" link */
+a[routerLink="/delivery"] {
+  display: block;
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+a[routerLink="/delivery"]:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+/* .main{
+  /* background-color: #ccc; 
+  width: 35%;
+  height: 50%;
+  margin-left: 390px;
+  margin-top: 70px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.payment-options {
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.payment-options h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.payment-option {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  justify-self: center;
+  align-self: center; 
+}
+*/
+
+/* .payment-option h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.payment-option p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.payment-option ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.payment-option li {
+  margin-bottom: 5px;
+}
+
+.payment-option a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.payment-option a:hover {
+  text-decoration: underline;
+}
+
+.payment-option .according {
+  position: relative;
+  cursor: pointer;
+} */
+
+/* .payment-option .arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  transition: all 0.2s ease-in-out;
+}
+
+.payment-option .according:hover .arrow {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.payment-option .card-selection {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.payment-option .card-selection img {
+  width: 50px;
+  height: auto;
+  cursor: pointer;
+}
+
+.payment-option .card-selection img:hover {
+  border: 1px solid #ccc;
+}
+
+.payment-option .form-group {
+  margin-bottom: 10px;
+}
+
+.payment-option .form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.payment-option .form-group input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.payment-option .form-group input:focus {
+  outline: none;
+  border: 1px solid #007bff;
+}
+
+.payment-option .form-group input::placeholder {
+  color: #ccc;
+}
+
+.payment-option .btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.payment-option .btn:hover {
+  background-color: #0069d9;
+} */

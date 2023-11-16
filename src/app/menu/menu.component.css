@@ -1,70 +1,100 @@
 .menu-container {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  h2 {
-    font-size: 24px;
-  }
-  
-  .food-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
-    gap: 20px; 
-    justify-items: center;
-  }
-  
-  .food-item {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: center;
-  }
-  
-  .food-item-image {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-    display: block;
-  }
-  
-  .food-details {
-    text-align: center;
-  }
-  
-  .food-name {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .food-price {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
+  width: 80%;
+  /* margin: 0 auto; */
+  text-align: center;
+  margin-left: 130px;
+}
 
-  .doraemon {
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
-    cursor: pointer;
-    position: absolute;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .doraemon.clicked {
-    transform: translate(0, -50px) scale(0.8);
-    opacity: 0;
-    transition: transform 0.2s, opacity 0.2s;
-  }
-  
-  .doraemon-clone {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    pointer-events: all;
-    transition: transform 0.2s, opacity 0.2s;
-  }
-  
+.main {
+  display: flex;
+  flex-direction: column;
+}
 
-  
-  
+input {
+  margin-top: 0;
+  max-width: 200px;
+  margin-left: 800px;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 48px;
+  font-family: sans-serif;
+}
+
+.food-items {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  margin-bottom: 10px;
+}
+
+.food-item {
+  padding: 30px;
+  border: 1px solid #ddd;
+  text-align: center;
+  background-color: #f4ebd3;
+  box-shadow: 2px black;
+}
+
+.food-item-image {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 5px;
+  border: 2px solid black;
+}
+
+.food-details {
+  text-align: center;
+}
+
+.food-name {
+  font-size: 18px;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.food-price {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 2px;
+  display: block;
+  color: black;
+}
+
+.doraemon {
+  width: 35px;
+  height: 35px;
+  margin: 0 auto;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.5s ease-in-out;
+  border: 1px solid black;
+}
+
+.doraemon.clicked {
+  transform: translate(0, -50px) scale(0.8);
+  opacity: 0;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.doraemon-clone {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  pointer-events: all;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+body {
+  background-image: url("../../assets/image/bg-image.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* background-position: center center;  */
+}

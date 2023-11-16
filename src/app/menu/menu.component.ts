@@ -39,75 +39,75 @@ export class MenuComponent implements OnInit {
   foodItems: FoodItem[] = [
     {
       name: 'Pizza',
-      price: 10.99,
+      price: 199,
       image: 'assets/image/pizza.png',
       quantity: 0,
     },
     {
       name: 'Burger',
-      price: 7.99,
+      price: 79,
       image: 'assets/image/burger.jpg',
       quantity: 0,
     },
     {
       name: 'Pasta',
-      price: 8.99,
+      price: 89,
       image: 'assets/image/pasta.jpg',
       quantity: 0,
     },
     {
       name: 'Salad',
-      price: 5.99,
+      price: 59,
       image: 'assets/image/salad.jpg',
       quantity: 0,
     },
     {
       name: 'Chicken',
-      price: 10.99,
+      price: 499,
       image: 'assets/image/chicken.jpg',
       quantity: 0,
     },
     {
       name: 'Pizza',
-      price: 10.99,
+      price: 199,
       image: 'assets/image/burger.jpg',
       quantity: 0,
     },
     {
       name: 'ROTIS',
-      price: 10.99,
+      price: 129,
       image: 'assets/image/rotis.jpg',
       quantity: 0,
     },
-    { name: 'DOSA', price: 10.99, image: 'assets/image/dosa.jpg', quantity: 0 },
+    { name: 'DOSA', price: 199, image: 'assets/image/dosa.jpg', quantity: 0 },
     {
       name: 'Sandwich',
-      price: 10.99,
+      price: 199,
       image: 'assets/image/sandwi.jpg',
       quantity: 0,
     },
     {
       name: 'Biryani',
-      price: 10.99,
+      price: 299,
       image: 'assets/image/biryani.jpg',
       quantity: 0,
     },
-    { name: 'DOSA', price: 10.99, image: 'assets/image/dosa.jpg', quantity: 0 },
+    { name: 'DOSA', price: 119, image: 'assets/image/dosa.jpg', quantity: 0 },
     {
       name: 'Idli',
-      price: 10.99,
+      price: 49,
       image: 'assets/image/biryani.jpg',
       quantity: 0,
     },
     {
       name: 'Icecream',
-      price: 10.99,
+      price: 79,
       image: 'assets/image/biryani.jpg',
       quantity: 0,
     },
     {
       name: 'Chocolates',
-      price: 10.99,
+      price: 59,
       image: 'assets/image/biryani.jpg',
       quantity: 0,
     },
@@ -199,6 +199,9 @@ export class MenuComponent implements OnInit {
   }
   viewDetails(item: any) {
     this.router.navigate(['/itemdescription', item.id]);
+  }
+  isMenuRoute() {
+    return this.router.url === '/menu';
   }
 }
 export interface FoodItem {

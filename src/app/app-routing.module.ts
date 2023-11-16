@@ -6,6 +6,8 @@ import { CartpageComponent } from './cartpage/cartpage.component';
 import { PurchaseComponent } from './purchase/purchase.component';
 import { DeliveryComponent } from './delivery/delivery.component';
 import { ItemdescriptionComponent } from './itemdescription/itemdescription.component';
+import { LoginComponent } from './login/login.component';
+
 const routes: Routes = [
   { path: 'menu', component: MenuComponent },
   { path: 'cart', component: CartComponent },
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/menu', pathMatch: 'full' },
   { path: 'delivery', component: DeliveryComponent },
   { path: 'itemdescription/:id', component: ItemdescriptionComponent },
+  { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
@@ -21,4 +24,3 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
-//comment

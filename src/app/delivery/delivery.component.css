@@ -1,0 +1,75 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6e6e6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* User location input and label */
+  .userlocation {
+    width: 40%;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #918f8f;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+    font-size: 20px;
+    margin-left: 430px;
+  }
+  
+  .userlocation h6 {
+    color: #333;
+    margin: 0;
+  }
+  
+  .userlocation label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .userlocation input {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #918f8f;
+    border-radius: 4px;
+  }
+  
+  /* Map container */
+  #map {
+    height: 500px;
+    width: 100%;
+    margin: 20px 0;
+    border: 1px solid #918f8f;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Locations and ETA sections */
+  .locations, .eta {
+    width: 40%;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #918f8f;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    margin-left: 430px;
+  }
+  
+  .locations h6, .eta h6 {
+    color: #333;
+    margin: 0;
+  }
+  
+  .locations p, .eta p {
+    margin: 10px 0;
+    color: rebeccapurple;
+  }

@@ -1,7 +1,12 @@
 <div class="userlocation">
   <h6>User location:</h6>
   <label for="location">
-    <input type="text" id="location" placeholder="Enter the address" />
+    <input
+      type="text"
+      id="location"
+      placeholder="Enter the address"
+      (keyup.enter)="geocodeAddress()"
+    />
   </label>
 </div>
 
